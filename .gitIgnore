@@ -1,0 +1,24 @@
+
+# dependencies
+/node_modules
+/toolkit/node_modules
+/toolkit/.pnp
+/toolkit/.pnp.js
+
+# testing
+/toolkit/coverage
+
+# production
+/toolkit/build
+
+# misc
+/backend/config/config.env
+/toolkit/.DS_Store
+/toolkit/.env.local
+/toolkit/.env.development.local
+/toolkit/.env.test.local
+/toolkit/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

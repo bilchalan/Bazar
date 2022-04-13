@@ -1,0 +1,119 @@
+.search-wrapper{
+ 
+
+}
+.button {
+	display: inline-block;
+	margin: 4px 2px;
+	background:rgba(255, 255, 255, 0.3);
+	font-size: 30px;
+	padding-left: 32px;
+	padding-right: 32px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.button:hover {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	background:rgba(255, 255, 255, 0.3);
+	color: black;
+}
+
+.search-container {
+	position: relative;
+	display: inline-block;
+	margin: 4px 2px;
+	height: 30px;
+	width: 30px;
+	vertical-align: bottom;
+}
+
+.mglass {
+	display: inline-block;
+	pointer-events: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+.searchbutton {
+  background:rgba(255, 255, 255, 0.3);
+	position: absolute;
+	font-size: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.search:focus + .searchbutton {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+  background:rgba(255, 255, 255, 0.3);
+	color: black;
+}
+
+.search {
+	position: absolute;
+	left: 30px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
+	background:rgba(255, 255, 255, 0.3);
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 0;
+	height: 100%;
+	z-index: 10;
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+}
+
+.search:focus {
+  width:201px;
+	/* width: 263px;  *//* Bar width+1px */
+	padding: 0 16px 0 0;
+}
+
+.expandright {
+	left: auto;
+	right: 30px; /* Button width-1px */
+}
+
+.expandright:focus {
+	padding: 0 0 0 16px;
+}
+.right-search-container{
+  display:none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .right-search-container{
+    display:block;
+  }
+  .left-search-container{
+    display:none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .search:focus {
+    width:160px;
+  }
+  
+}

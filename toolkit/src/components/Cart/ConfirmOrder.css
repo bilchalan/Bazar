@@ -1,0 +1,40 @@
+.base-div3{
+    margin:20px auto;
+    display: flex;
+    flex-direction: row;
+    width:99%;
+}
+.base-div3 .last{
+    text-align: right;
+}
+.div3{
+    display:flex;
+    width:30%;
+    flex-direction: column;
+}
+.div3 .title{
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #1976d2;
+    color:#fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 7px -1px #777;
+}
+.divmid{
+    width:38%;
+    padding: 0 1%;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .base-div3{
+        flex-direction: column;
+    }
+    .div3,.divmid{
+        display:flex;
+        width:100%;
+        flex-direction: column;
+        border:none;
+        padding: 0;
+    }
+  }

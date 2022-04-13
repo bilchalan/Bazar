@@ -1,0 +1,105 @@
+.site-header{
+    color:#fff;
+    display:flex;
+    background-color: #1976d2;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+    padding: 10px 1%;
+    justify-content: space-between;
+    position:relative;
+}
+.primary-menu{
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    width: 100%;
+}
+.mobile-menu{
+    display: none;
+}
+.mnwrapper{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.mnwrapper a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px #555;
+    margin:10px 0;
+}
+.secondary-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.search-area{
+    display: none;
+}
+.pages-area{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-transform: uppercase;
+    margin-left: 15%;
+}
+.pages-area a{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px #555;
+}
+.cart-area{
+    min-width: 35px;
+    padding: 0 35px 0 0px;
+}
+.auth-area{
+    position: relative;
+    width: 70px;
+    height: 60px;
+}
+.unauth-area{
+    position: relative;
+}
+.unauth-area div{
+    display: flex;
+    justify-content: right;
+}
+.unauth-area div a{
+    text-decoration: none;
+}
+header a{
+    color:#fff;
+}
+header a:hover{
+    color:#dadada;
+}
+@media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      .primary-menu{
+          width: auto;
+      }
+      .pages-area{
+          display: none;
+      }
+      .site-header{
+          flex-direction: column;
+          align-items: center;
+      }
+      .secondary-menu {
+        justify-content: space-between;
+        width: 94%;
+    }
+    .mobile-menu{
+        display: block;
+        position: absolute;
+        left: 10px;
+        top:10px;
+    }
+    .unauth-area div{
+        position:unset;
+    }
+}

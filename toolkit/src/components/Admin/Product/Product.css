@@ -1,0 +1,9 @@
+.galleryback{
+    width:100%;
+    margin:10px 0;
+    border:1px solid #dadada;
+    background-repeat:repeat;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 0;
+}

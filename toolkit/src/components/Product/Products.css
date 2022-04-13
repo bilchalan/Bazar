@@ -1,0 +1,88 @@
+.wrapper{
+    display: flex;
+}
+.container{
+    width:100%;
+    text-align: center;
+}
+/* .card-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+}
+.productCard{
+    margin: 10px;
+    text-align:center;
+    width:23%;
+} */
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+    width: 98%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.filter-box{
+    padding: 0 5px;
+    min-width: 290px;
+}
+/* pagination */
+.pagination{
+    justify-content: center;
+    margin: 50px auto 20px;
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: 0;
+}
+.pagination .page-item a{
+    padding: 5px 15px;
+    border: 1px solid #dadada;
+    text-decoration: none;
+    color:#1976d2;
+}
+.pagination .page-item a:hover{
+    background: #fafafa;
+}
+.pagination .disabled a,
+.pagination .disabled a:hover{
+    cursor: not-allowed;
+    color:#dadada;
+    background: #fff;
+}
+.pagination .active a,
+.pagination .active a:hover{
+    background: #1976d2;
+    cursor: not-allowed;
+    color:#fff;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .wrapper{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    /* For mobile phones: */
+    .card-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 960px) {
+    /* For mobile phones: */
+    .card-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 530px) {
+    /* For mobile phones: */
+    .card-container{
+        width:90%;
+        grid-template-columns: 1fr;
+        grid-row-gap: 25px;
+    }
+}
