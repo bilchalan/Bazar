@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API=axios.create({
-    baseURL:"http://localhost:4000",
+    baseURL:"https://bil-bazar.herokuapp.com",
     withCredentials: true,
     headers:{"Content-Type": "application/form-data"}
 });
