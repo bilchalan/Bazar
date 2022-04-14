@@ -48,9 +48,11 @@ function Header() {
                                   
                 </div>
                 <div className='cart-area'>
+                    <NavLink to = '/cart'>
                     <StyledBadge badgeContent={products.length>0?products.length:'0'} color="secondary">
-                        <NavLink to = '/cart'><ShoppingCartIcon /></NavLink>
+                        <ShoppingCartIcon />
                     </StyledBadge>
+                    </NavLink>
                 </div>
                 {isAuthenticated? 
                     <div className='auth-area'>

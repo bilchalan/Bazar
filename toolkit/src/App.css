@@ -5,7 +5,7 @@
 }
 .main{
   flex-grow: 1;
-  padding: 10px 0;
+  padding: 25px 0;
 }
 .main .box-shadow{
   box-shadow: 1px 1px 6px -3px rgb(0 0 0 / 100%);
@@ -25,4 +25,13 @@ textarea{
   font-size: 1rem;
   font-family: "Roboto","Helvetica","Arial",sans-serif;
   font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .contactList li a,
+  .contactList li span,
+  .contactList li div{
+    font-size: 12px;
+  }
 }

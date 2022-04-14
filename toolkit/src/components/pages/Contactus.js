@@ -20,7 +20,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 const Contactus = () => {
   return (
    <>
-   <List sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper',m:'0 auto' }}>
+   <List sx={{ width: '100%', maxWidth: 320, bgcolor: 'background.paper',m:'0 auto' }} className="contactList">
 
         <ListItem>
             <ListItemAvatar><Avatar>
@@ -31,7 +31,7 @@ const Contactus = () => {
         <Divider variant="inset" component="li" />
         <ListItem>
             <ListItemAvatar><Avatar><EmailIcon /></Avatar></ListItemAvatar>
-            <ListItemText primary="bilchalan@gmail.com" />
+            <ListItemText primary={<a href='mailto:bilchalan@gmail.com'>bilchalan@gmail.com</a>} /> 
         </ListItem>
         <Divider variant="inset" component="li" />
         <ListItem>
@@ -51,7 +51,7 @@ const Contactus = () => {
         <Divider variant="inset" component="li" />    
         <ListItem>
             <ListItemAvatar><Avatar><TwitterIcon/></Avatar></ListItemAvatar>
-            <ListItemText primary="@bilchalan" />
+            <ListItemText primary={<a href='https://www.twitter.com/bilchalan' target="_blank">https://www.twitter.com/bilchalan</a>} />
         </ListItem>
         <Divider variant="inset" component="li" />  
         <ListItem>

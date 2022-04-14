@@ -186,7 +186,7 @@ const Products = () => {
           </div>
           </>
           ) : (<>            
-            <Typography variant="h4" component="div" sx={{ml:'10px',mb:'20px',textAlign:'left'}}>                
+            <Typography variant="h4" component="div" sx={{ml:'10px',mb:'20px'}}>                
                 {filteredProductsCount && filteredProductsCount>0 ? `In store ${filteredProductsCount} items : `: `No products found`}
             </Typography>
             

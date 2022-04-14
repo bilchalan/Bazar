@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate,useLocation} from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux";
 import {toast} from "react-toastify";
 
@@ -12,6 +12,12 @@ import {registration} from '../../redux/features/authSlice';
 
 
 const Registration = () => {
+  const location=useLocation();
+  let path='/profile';
+  if(location.state){
+      path=location.state.path;
+  }
+
   const dispatch=useDispatch();
   const {isAuthenticated}=useSelector(state=>state.auth.userDetails);
   const navigate=useNavigate();
@@ -53,11 +59,12 @@ const Registration = () => {
       formData.set("avatar",avatar);
       dispatch(registration({formData,toast}));
   }
+  
   useEffect(() => {
     if(isAuthenticated){
-        navigate('/profile');
+      navigate(path);
     }
-  }, [dispatch,isAuthenticated,navigate]);
+  }, [dispatch,isAuthenticated,navigate,path]);
 
   return (
     <>

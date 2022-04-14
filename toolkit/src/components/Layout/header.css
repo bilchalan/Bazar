@@ -31,7 +31,8 @@
 .secondary-menu{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    min-width: 280px;
 }
 .search-area{
     display: none;
@@ -52,9 +53,8 @@
     font-weight: 500;
     text-shadow: 1px 1px 1px #555;
 }
-.cart-area{
-    min-width: 35px;
-    padding: 0 35px 0 0px;
+.cart-area a{
+    padding: 15px;
 }
 .auth-area{
     position: relative;
@@ -101,5 +101,8 @@ header a:hover{
     }
     .unauth-area div{
         position:unset;
+    }
+    .cart-area a{
+        padding: 20px 20px 20px 0;
     }
 }

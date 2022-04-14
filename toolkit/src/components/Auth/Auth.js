@@ -60,7 +60,7 @@ export default function Auth() {
   };
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', maxWidth: '500px', margin: '0 auto', padding:'5px'}} className='box-shadow'>
+    <Box sx={{ bgcolor: 'background.paper', maxWidth: '325px', margin: '0 auto', padding:'10px'}} className='box-shadow'>
       <AppBar position="static">
         <Tabs
           value={value}

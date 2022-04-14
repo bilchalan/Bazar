@@ -33,7 +33,7 @@ const Shipping = () => {
 
   return (<>
 
-    <Box sx={{margin:'20px auto',display: 'flex',flexDirection: 'column',alignItems: 'center',maxWidth:'550px'}}>    
+    <Box sx={{m:'20px auto',display: 'flex',flexDirection: 'column',alignItems: 'center',maxWidth:'550px',p:2}}>    
           <LocationOnIcon  sx={{width:100,height:100,color:'#9c27b0'}}/>
           <Typography component="h1" variant="h5">Shipping Information</Typography>
           <Box component="form"  sx={{ mt: 1 }} onSubmit={handleSubmit}>
