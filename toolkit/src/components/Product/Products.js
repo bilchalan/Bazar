@@ -30,6 +30,9 @@ const Products = () => {
   let maxPrice=100000;
   const [ priceRange, setPriceRange ] = useState([minPrice,maxPrice]);
   //rating range state
+  const minRate=0;
+  const maxRate=5;
+  const defaultRate=0;
   const [ ratingsFilter, setRatingsFilter ] = useState(0);
   //pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +54,7 @@ const Products = () => {
     setCategory("");
   }
   const dispatch=useDispatch();
-  const {loading,productCount,resultPerPage,products,filteredProductsCount}=useSelector((state)=>state.products.allProducts);
+  const {loading,resultPerPage,products,filteredProductsCount}=useSelector((state)=>state.products.allProducts);
   const {categories}=useSelector(state=>state.categories.allCategories);
   
   useEffect(() => {
@@ -64,7 +67,7 @@ const Products = () => {
     <div className='wrapper'>
 
       <div className="filter-box">
-        {loading ?<HeadingWaveSkeleton/>:(
+
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
             <Typography sx={{display:'flex'}}><FilterAltIcon/>Filter products</Typography>
@@ -77,41 +80,23 @@ const Products = () => {
                 <Typography>Search Products</Typography>
               </AccordionSummary>
               <AccordionDetails>
-              <TextField  margin="normal" 
-                            required  
-                            fullWidth
-                            autoFocus  
-                            id="search" 
-                            label="Search" 
-                            type="text" 
-                            name="search" 
-                            value={search} 
-                            onChange={(e=>setSearch(e.target.value))}/>
+              <TextField  margin="none" 
+                          fullWidth
+                          autoFocus  
+                          id="search" 
+                          label="Search" 
+                          type="text" 
+                          name="search" 
+                          value={search} 
+                          onChange={(e=>setSearch(e.target.value))}/>
               </AccordionDetails>
             </Accordion> 
           </div>
-        
-          <div className="price-filter-box">            
-          <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                <Typography>By Price</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-              <Slider
-                        min={minPrice}
-                        max={maxPrice}
-                        value={priceRange}
-                        onChange={(e,newPriceRange)=>setPriceRange(newPriceRange)}
-                        valueLabelDisplay="auto"
-                    />
-              </AccordionDetails>
-            </Accordion> 
-          </div>
-        
+
           <div className="category-filter-box">  
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                <Typography>By Category...</Typography>
+                <Typography>Category</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <List component="nav" aria-label="main mailbox folders">
@@ -135,26 +120,46 @@ const Products = () => {
                 </List>  
               </AccordionDetails>
             </Accordion>                                            
+          </div>        
+        
+          <div className="price-filter-box">            
+          <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                <Typography>Price</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+              <Slider
+                        min={minPrice}
+                        max={maxPrice}
+                        value={priceRange}
+                        onChange={(e,newPriceRange)=>setPriceRange(newPriceRange)}
+                        valueLabelDisplay="auto"
+                    />
+              </AccordionDetails>
+            </Accordion> 
           </div>
         
           <div className="rating-filter-box">
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                <Typography>By Ratings...</Typography>
+                <Typography>Rating</Typography>
               </AccordionSummary>
               <AccordionDetails>
                   <Slider
-                      defaultValue={0}
+                      name="rateFilter"
+                      defaultValue={defaultRate}
                       valueLabelDisplay="auto"
                       onChange={(e)=>setRatingsFilter(e.target.value)}                                
                       step={0.5}
                       marks
-                      min={0}
-                      max={5}
+                      min={minRate}
+                      max={maxRate}
+                      value={ratingsFilter}
                   />
               </AccordionDetails>
             </Accordion>   
           </div>
+
           <div className="filter-clear" style={{textAlign:'right',marginTop:'10px'}}>
             <Button color="error" 
                       variant="outlined" 
@@ -165,8 +170,7 @@ const Products = () => {
           </div>
         
           </AccordionDetails>
-        </Accordion>
-        )}     
+        </Accordion>    
       </div>
       
       
@@ -182,8 +186,8 @@ const Products = () => {
           </div>
           </>
           ) : (<>            
-            <Typography variant="h4" component="div" sx={{ml:'10px',mb:'20px',textAlign:'left'}}>
-                {productCount && productCount>0 ? `Found amazing ${productCount} items below : `: `No products found`}
+            <Typography variant="h4" component="div" sx={{ml:'10px',mb:'20px',textAlign:'left'}}>                
+                {filteredProductsCount && filteredProductsCount>0 ? `In store ${filteredProductsCount} items : `: `No products found`}
             </Typography>
             
             <div className='card-container'>
@@ -202,14 +206,18 @@ const Products = () => {
                   itemsCountPerPage={resultPerPage}
                   totalItemsCount={filteredProductsCount}
                   onChange={(e)=>setCurrentPage(e)}
-                  nextPageText=">"
-                  prevPageText="<"
-                  firstPageText="<<"                                            
-                  lastPageText=">>"
+                  nextPageText=""
+                  prevPageText=""
+                  firstPageText=""                                            
+                  lastPageText=""
                   itemClass="page-item"
                   linkClass="page-link"
                   activeClass="pageItemActive active"
                   activeLinkClass="pageLInkActive disabled"
+                  itemClassFirst="itemClassFirst"
+                  itemClassPrev="itemClassPrev"
+                  itemClassNext="itemClassNext"
+                  itemClassLast="itemClassLast"
               />
           </div>
         )}

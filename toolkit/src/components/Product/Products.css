@@ -60,6 +60,19 @@
     cursor: not-allowed;
     color:#fff;
 }
+
+.pagination .itemClassFirst a::before{
+    content:'\00AB';
+}
+.pagination .itemClassPrev a::before{
+    content:'\2039';
+}
+.pagination .itemClassNext a::before{
+    content:'\203A';
+}
+.pagination .itemClassLast a::before{
+    content:'\00BB';
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .wrapper{
